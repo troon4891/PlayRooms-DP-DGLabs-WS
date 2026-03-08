@@ -18,10 +18,22 @@ limitations under the License.
 
 ## Third-Party Dependencies
 
-<!-- Add third-party library attributions here as dependencies are added. -->
-<!-- Format: -->
-<!-- ### [Library Name](URL) -->
-<!-- - License: [License Type] -->
-<!-- - Copyright: [Copyright Holder] -->
+### [ws](https://github.com/websockets/ws)
+- License: MIT
+- Copyright: Copyright (c) 2011 Einar Otto Stangvik (einaros@gmail.com)
+- Usage: WebSocket client/server for Node.js — used for the WebSocket connection to the DG-LAB relay server
 
-No third-party dependencies yet. This section will be updated as dependencies are added.
+### [@types/ws](https://github.com/DefinitelyTyped/DefinitelyTyped)
+- License: MIT
+- Copyright: Microsoft Corporation and contributors
+- Usage: TypeScript type definitions for the `ws` package (devDependency)
+
+### [@types/node](https://github.com/DefinitelyTyped/DefinitelyTyped)
+- License: MIT
+- Copyright: Microsoft Corporation and contributors
+- Usage: TypeScript type definitions for Node.js built-ins (devDependency)
+
+### [TypeScript](https://www.typescriptlang.org/)
+- License: Apache-2.0
+- Copyright: Microsoft Corporation
+- Usage: TypeScript compiler (devDependency)
