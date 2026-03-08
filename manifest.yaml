@@ -1,0 +1,42 @@
+name: dglab-ws
+displayName: "DG-LAB Coyote (WebSocket)"
+version: "1.0.0"
+type: device-provider
+description: "Control DG-LAB Coyote e-stim devices via WebSocket through the DG-LAB mobile app"
+author: "PlayRooms"
+license: "Apache-2.0"
+providerApiVersion: 1
+
+requirements:
+  bluetooth: false
+  serial: false
+  network: true
+
+settings:
+  wsUrl:
+    type: string
+    label: "WebSocket Server URL"
+    description: "URL of the DG-LAB WebSocket relay server (e.g. ws://192.168.1.100:4567)"
+    default: ""
+    required: true
+  logLevel:
+    type: select
+    label: "Log Level"
+    options: [debug, info, warn, error]
+    default: "info"
+
+aiInteraction:
+  allowed: true
+  defaultEnabled: false
+  safetyNote: "E-stim devices require explicit host opt-in for AI control. AI intensity caps default to 50% of device maximum."
+
+riskFlags:
+  - type: "electrical-stimulation"
+    severity: high
+    description: "Controls e-stim devices that deliver electrical impulses. Improper use can cause burns, muscle injury, or cardiac events. Read SAFETY.md before use."
+  - type: "requires-physical-safety-gear"
+    severity: medium
+    description: "Users should have physical access to the device's power button or be able to remove electrodes immediately as a hardware-level fallback."
+  - type: "network-dependent"
+    severity: low
+    description: "Connection path is: PlayRooms → WebSocket → DG-LAB App → Bluetooth → Coyote. If any link drops, the device continues its last waveform at its last intensity until the app's own timeout triggers (approximately 10 seconds)."
