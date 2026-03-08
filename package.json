@@ -1,0 +1,31 @@
+{
+  "name": "playrooms-dp-dglab-ws",
+  "version": "1.0.0",
+  "description": "PlayRooms Device Provider — DG-LAB Coyote e-stim via WebSocket",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest"
+  },
+  "keywords": [
+    "playrooms",
+    "dglab",
+    "coyote",
+    "estim",
+    "websocket",
+    "device-provider"
+  ],
+  "author": "PlayRooms",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.5.10",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "ws": "^8.16.0"
+  }
+}
